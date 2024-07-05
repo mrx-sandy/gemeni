@@ -6,13 +6,14 @@ const Main = () => {
   return (
     <div className="main">
       <div className="nav">
-        <h2 className="greet">Gemeni</h2>
+        <div className="greet">Gemeni</div>
         <img src={assets.user_icon} alt="" />
       </div>
 
       <div className="main-contaner">
         <div className="greet">
           <p>
+          
             {" "}
             <span>Hello, Dev</span>{" "}
           </p>
