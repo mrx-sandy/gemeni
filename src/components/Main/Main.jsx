@@ -54,6 +54,9 @@ const Main = () => {
             <img src={assets.mic_icon} alt="" />
             <img src={assets.send_icon} alt="" />
           </div>
+          <p className="bottom-info">
+Gemeni may display inaccurate info,including about people,so double-check its responses 
+          </p>
         </div>
       </div>
     </div>
