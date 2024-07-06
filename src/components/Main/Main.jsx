@@ -1,8 +1,12 @@
 import { assets } from "../../assets/assets";
+import ContextProvider, { Context } from "../../context/Context";
 import "./Main.css";
-import React from "react";
-
+import { useContext } from "react";
 const Main = () => {
+
+const{onSet,recentPrompt,showResult,loading,resultData,setInput,input} =(useContext)
+
+
   return (
     <div className="main">
       <div className="nav">
@@ -11,6 +15,10 @@ const Main = () => {
       </div>
 
       <div className="main-contaner">
+
+
+       
+        <>
         <div className="greet">
           <p>
           
@@ -19,6 +27,12 @@ const Main = () => {
           </p>
           <p>How can I help you today ?</p>
         </div>
+       
+
+
+
+        </div>
+
         <div className="cards">
           <div className="card">
             <p>Suggests beautiful places to see on an upcoming road</p>
@@ -47,13 +61,15 @@ const Main = () => {
             <img src={assets.bulb_icon} alt="" />
           </div>
         </div>
-
+         </> 
+       
         <div className="main-bottom">
           <div className="search-box">
-            <input type="text" placeholder="Enter a prompt here" />
+            <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder="Enter a prompt here" />
             <img src={assets.gallery_icon} alt="" />
             <img src={assets.mic_icon} alt="" />
-            <img src={assets.send_icon} alt="" />
+            <img onClick={() => onSet()} src={assets.send_icon} alt="" />
+
           </div>
           <p className="bottom-info">
 Gemeni may display inaccurate info,including about people,so double-check its responses 

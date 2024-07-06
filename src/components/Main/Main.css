@@ -1,16 +1,23 @@
 
-
 .main {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   min-height: 100vh;
   padding-bottom: 15vh;
   position: relative;
 }
 
 .main .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-size: 22px;
   padding: 20px;
   color: #585858;
@@ -25,7 +32,8 @@
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   margin: auto;
 }
@@ -41,80 +49,62 @@
 }
 
 .greet p span {
-  font-weight: bold;
-  color: #007bff;
-  font-size: 36px; /* Larger font size for "Hello Dev" */
+ 
+background: -o-linear-gradient(74deg, #4b90ff, #ff5546);
+ 
+background: linear-gradient(16deg, #4b90ff, #ff5546);
+-webkit-background-clip: text;
+        background-clip: text;
+-webkit-text-fill-color: transparent;
+text-fill-color: transparent;
+font-weight: bold;
+font-size: 75px;
+color: #c4c7c5;
 }
-
-.main .greet span {
-  background: linear-gradient(16deg, #4b90ff, #ff5546);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  font-weight: bold;
-  font-size: 75px;
-  color: #c4c7c5;
-}
-
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust min width as needed */
-    gap: 15px;
-    padding: 20px;
-  }
-  
-  .card {
-    height: 100px;
-    /* Removed fixed width */
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-    padding: 15px;
-    /* Consider using responsive margins (e.g., margin: 1vw) */
-    background-color: #f0f4f9;
-    display: flex; /* Maintains flexbox for card content */
-    justify-content: space-between; /* Aligns content horizontally (icons to the right) */
-    align-items: center; /* Aligns content vertically */
-  }
-  
-  /* Optional Media Query for Smaller Screens (adjust breakpoint as needed) */
-  @media (max-width: 768px) {
-    .cards {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
-    }
-  }
-
-
-/* .cards {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
   padding: 20px;
 }
 
 .card {
   height: 100px;
-  width: 300px;
   border-radius: 10px;
   position: relative;
   cursor: pointer;
   padding: 15px;
-  margin: 10%;
-
   background-color: #f0f4f9;
-
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
- 
-} */
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  -o-transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+}
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card p {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin: 0;
   font-size: 16px;
   color: #555;
@@ -126,12 +116,19 @@
   margin-left: 20px;
 }
 
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
 @media (min-width: 600px) {
   .greet p {
     font-size: 28px;
   }
 
   .cards {
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -142,80 +139,78 @@
   }
 
   .cards {
+    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
-
-
-/* search-Box */
-.main-bottom{
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-
-   
-    /* padding: 100px 20px; */
-    margin: auto;
-    padding: 0% 8%;
-
-}
-
-.search-box{
-    /* display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center ;
-        -ms-flex-align: center ;
-            align-items: center ;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    gap: 20px ;
-    background-color: #f0f4f9;
-    padding: 10px 20px;
-    border-radius: 50px; */
-
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    background-color: #f0f4f9;
-    padding: 10px 20px;
-    margin-top: 70%;
-    border-radius: 50px;
+.main-bottom {
+  /* display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width:1100px;
+  margin: 1% 21%;
   
+  padding: 100px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search-box {
+  
+  display: flex;
+ align-items: center;
+ justify-content: space-between;
+  gap: 20px;
+  background-color: #f0f4f9;
+  padding: 10px 20px;
+  border-radius: 50px;
+   width: 100%;
+  max-width: 100%;
+  
+  height: 55px;
+}
+
+.search-box img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.search-box input {
+  
+          flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.search-box div {
+ align-items: center;
+  display: flex;
+  gap: 150px;
 }
 
 
-.search-box img{
-    width: 24px;
-    cursor: pointer;
-}
-
-.search-box input{
-    flex: 1;
-    background: transparent;
-    border: none;
-    padding: 8px;
-    font-size: 18px;
-
-
-}
-
-.search-box div{
-    display:flex ;
-    align-items: center;
-    gap: 15px;
-    
-}
+  .search-box input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
 
 .main .bottom-info{
-    font-size: 13px;
-    margin: 15px auto;
-    text-align: center;
-    font-weight: 300;
-    padding: 12% 8%;
+  font-size: 13px;
+  margin: 15px auto;
+  text-align: center;
+  font-weight: 300;
 
 }
