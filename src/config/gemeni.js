@@ -28,7 +28,7 @@ import {
     responseMimeType: "text/plain",
   };
   
-  async function run(prompt) {
+  async function runChat(prompt) {
     const chatSession = model.startChat({
       generationConfig,
       // safetySettings: Adjust safety settings
@@ -37,10 +37,11 @@ import {
     });
   
     const result = await chatSession.sendMessage(prompt);
+    const response=result.response;
     console.log(result.response.text);
   
 return response.text();
 }
   
-  export default run;
+  export default runChat;
   
